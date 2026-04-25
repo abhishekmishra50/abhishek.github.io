@@ -8,304 +8,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --cream: #faf8f4;
-      --ink: #1a1714;
-      --muted: #7a7570;
-      --accent: #c4a882;
-      --border: #e8e3db;
-      --hover: #f0ece5;
+      --cream: #faf8f4; --ink: #1a1714; --muted: #7a7570;
+      --accent: #c4a882; --border: #e8e3db; --hover: #f0ece5;
     }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    /* ── Navigation ── */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 3rem;
-      border-bottom: 0.5px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: var(--cream);
-      z-index: 10;
-    }
-
-    .nav-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 300;
-      letter-spacing: 0.03em;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--ink);
-    }
-
-    /* ── Hero ── */
-    .hero {
-      padding: 5rem 3rem 2.5rem;
-      max-width: 640px;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 52px;
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 300;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── Filters ── */
-    .filters {
-      display: flex;
-      gap: 0.6rem;
-      padding: 0 3rem 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 7px 20px;
-      border: 0.5px solid var(--border);
-      background: transparent;
-      border-radius: 40px;
-      cursor: pointer;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      font-family: 'DM Sans', sans-serif;
-      transition: all 0.2s;
-    }
-
-    .filter-btn:hover {
-      border-color: var(--accent);
-      color: var(--ink);
-    }
-
-    .filter-btn.active {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--cream);
-    }
-
-    /* ── Section labels ── */
-    .section-label {
-      padding: 0 3rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    .section-label h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 0.5px;
-      background: var(--border);
-    }
-
-    /* ── Gallery grid ── */
-    .gallery {
-      columns: 3;
-      gap: 8px;
-      padding: 0 3rem 1rem;
-    }
-
+    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--cream); z-index: 10; }
+    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; letter-spacing: 0.03em; text-decoration: none; color: var(--ink); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .hero { padding: 5rem 3rem 2.5rem; max-width: 640px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.1; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); font-size: 14px; font-weight: 300; letter-spacing: 0.05em; }
+    .filters { display: flex; gap: 0.6rem; padding: 0 3rem 2.5rem; flex-wrap: wrap; }
+    .filter-btn { padding: 7px 20px; border: 0.5px solid var(--border); background: transparent; border-radius: 40px; cursor: pointer; font-size: 12px; letter-spacing: 0.05em; color: var(--muted); font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+    .filter-btn:hover { border-color: var(--accent); color: var(--ink); }
+    .filter-btn.active { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+    .section-label { padding: 0 3rem 1.25rem; display: flex; align-items: center; gap: 1.25rem; }
+    .section-label h2 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: var(--muted); white-space: nowrap; }
+    .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+    .gallery { columns: 3; gap: 8px; padding: 0 3rem 2rem; }
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { gap: 1rem; }
-      .hero { padding: 3rem 1.25rem 1.5rem; }
-      .hero h1 { font-size: 36px; }
-      .filters { padding: 0 1.25rem 1.5rem; }
-      .section-label { padding: 0 1.25rem 1rem; }
-      .gallery { columns: 2; padding: 0 1.25rem 1rem; }
-      footer { padding: 1.5rem 1.25rem; }
+      nav { padding: 1rem 1.25rem; } .nav-links { gap: 1rem; }
+      .hero { padding: 3rem 1.25rem 1.5rem; } .hero h1 { font-size: 36px; }
+      .filters { padding: 0 1.25rem 1.5rem; } .section-label { padding: 0 1.25rem 1rem; }
+      .gallery { columns: 2; padding: 0 1.25rem 1rem; } footer { padding: 1.5rem 1.25rem; }
     }
-
-    @media (max-width: 480px) {
-      .gallery { columns: 1; }
-    }
-
-    /* ── Photo cards ── */
-    .photo-card {
-      break-inside: avoid;
-      margin-bottom: 8px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 3px;
-    }
-
-    .photo-card img {
-      width: 100%;
-      display: block;
-      filter: saturate(0.92);
-      transition: filter 0.5s, transform 0.5s;
-    }
-
-    .photo-card:hover img {
-      filter: saturate(1.08);
-      transform: scale(1.03);
-    }
-
-    .photo-card .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 2rem 1rem 0.9rem;
-      background: linear-gradient(transparent, rgba(26,23,20,0.75));
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.3s, transform 0.3s;
-      pointer-events: none;
-    }
-
-    .photo-card:hover .overlay {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .overlay p {
-      color: rgba(255,255,255,0.88);
-      font-size: 12px;
-      line-height: 1.45;
-      font-weight: 300;
-    }
-
-    /* ── Lightbox ── */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(20, 17, 14, 0.96);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 2rem;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-height: 82vh;
-      max-width: 92vw;
-      object-fit: contain;
-      border-radius: 2px;
-    }
-
-    .lightbox-caption {
-      color: rgba(255,255,255,0.5);
-      font-size: 12px;
-      font-weight: 300;
-      margin-top: 1.25rem;
-      text-align: center;
-      max-width: 560px;
-      letter-spacing: 0.03em;
-    }
-
-    .lightbox-nav {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: 0.5px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.5);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-    }
-
-    .lightbox-nav:hover {
-      border-color: rgba(255,255,255,0.6);
-      color: #fff;
-    }
-
-    #lb-prev { left: 1.5rem; }
-    #lb-next { right: 1.5rem; }
-
-    .lightbox-close {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.75rem;
-      color: rgba(255,255,255,0.4);
-      font-size: 20px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1;
-      padding: 0.5rem;
-      transition: color 0.2s;
-    }
-
+    @media (max-width: 480px) { .gallery { columns: 1; } }
+    .photo-card { break-inside: avoid; margin-bottom: 8px; position: relative; overflow: hidden; cursor: pointer; border-radius: 3px; }
+    .photo-card img { width: 100%; display: block; filter: saturate(0.92); transition: filter 0.5s, transform 0.5s; }
+    .photo-card:hover img { filter: saturate(1.08); transform: scale(1.03); }
+    .photo-card .overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem 0.9rem; background: linear-gradient(transparent, rgba(26,23,20,0.75)); opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+    .photo-card:hover .overlay { opacity: 1; transform: translateY(0); }
+    .overlay p { color: rgba(255,255,255,0.88); font-size: 12px; line-height: 1.45; font-weight: 300; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(20,17,14,0.96); z-index: 100; align-items: center; justify-content: center; flex-direction: column; padding: 2rem; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-height: 82vh; max-width: 92vw; object-fit: contain; border-radius: 2px; }
+    .lightbox-caption { color: rgba(255,255,255,0.5); font-size: 12px; font-weight: 300; margin-top: 1.25rem; text-align: center; max-width: 560px; letter-spacing: 0.03em; }
+    .lightbox-nav { position: fixed; top: 50%; transform: translateY(-50%); background: none; border: 0.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .lightbox-nav:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+    #lb-prev { left: 1.5rem; } #lb-next { right: 1.5rem; }
+    .lightbox-close { position: fixed; top: 1.5rem; right: 1.75rem; color: rgba(255,255,255,0.4); font-size: 20px; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; padding: 0.5rem; transition: color 0.2s; }
     .lightbox-close:hover { color: #fff; }
-
-    /* ── Hidden photos when filter active ── */
-    .photo-card.hidden {
-      display: none;
-    }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 0.5px solid var(--border);
-      padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 3rem;
-    }
+    .photo-card.hidden { display: none; }
+    footer { border-top: 0.5px solid var(--border); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; margin-top: 3rem; }
   </style>
 </head>
 <body>
@@ -314,9 +61,8 @@
   <a class="nav-name" href="#">Your Name</a>
   <div class="nav-links">
     <a href="#" class="active">Photos</a>
-    <a href="#" class="active">Photos</a>
-    <a href="#" class="active">Photos</a>
-    <a href="#" class="active">Photos</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
   </div>
 </nav>
 
@@ -333,149 +79,38 @@
   <button class="filter-btn" data-filter="bw">Black &amp; White</button>
 </div>
 
-<!-- ────────────────────────────────────────
-     HOW TO ADD YOUR PHOTOS:
-     1. Put your .jpg / .png files in the same folder as this index.html
-        (or a subfolder like "photos/")
-     2. Replace each src="photos/your-photo.jpg" with your actual filename
-     3. Change the caption text inside <p class="caption">
-     4. Change data-category to match your filter buttons
-        (options: nature, people, cities, bw)
-     5. Add or remove <div class="photo-card"> blocks as needed
-     ──────────────────────────────────────── -->
+<!-- ══════════════════════════════════════════════
+     HOW TO ADD MORE PHOTOS:
+     1. Upload your .jpg file into the "Photos" folder on GitHub
+        (capital P — exactly "Photos")
+     2. Copy one photo-card block below
+     3. Change:  src="Photos/YOUR-FILENAME.jpg"
+     4. Change:  data-category="nature" (or people / cities / bw)
+     5. Update the caption text
+     ══════════════════════════════════════════════ -->
 
-<div class="section-label"><h2>Nature</h2></div>
-
-<div class="gallery">
-
-  <!-- Photo 1 -->
-  <div class="photo-card" data-category="nature">
-    <img src="Photos/IMG_0838.jpg" alt="Lava streams Hawaii">
-    <div class="overlay">
-      <p class="caption">Volcano Puʻu ʻŌʻō lava streams, Hawaii, 2017</p>
-    </div>
-  </div>
-
-  <!-- Photo 2 -->
-  <div class="photo-card" data-category="nature">
-    <img src="photos/nature-2.jpg" alt="Manta Ray Hawaii">
-    <div class="overlay">
-      <p class="caption">Manta Ray Heaven, Hawaii</p>
-    </div>
-  </div>
-
-  <!-- Photo 3 -->
-  <div class="photo-card" data-category="nature">
-    <img src="photos/nature-3.jpg" alt="Sandstone Utah">
-    <div class="overlay">
-      <p class="caption">Natural sandstone at sunset, Utah, USA</p>
-    </div>
-  </div>
-
-  <!-- Photo 4 -->
-  <div class="photo-card" data-category="nature">
-    <img src="photos/nature-4.jpg" alt="Padar Island Indonesia">
-    <div class="overlay">
-      <p class="caption">Padar Island three-coloured beaches, Komodo, Indonesia, 2016</p>
-    </div>
-  </div>
-
-  <!-- Photo 5 -->
-  <div class="photo-card" data-category="nature">
-    <img src="photos/nature-5.jpg" alt="Death Valley">
-    <div class="overlay">
-      <p class="caption">Racetrack, Death Valley National Park</p>
-    </div>
-  </div>
-
-  <!-- Photo 6 -->
-  <div class="photo-card" data-category="nature">
-    <img src="photos/nature-6.jpg" alt="Milky Way">
-    <div class="overlay">
-      <p class="caption">Milky Way and observatory, Haleakala National Park, Maui</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="section-label"><h2>People</h2></div>
-
-<div class="gallery">
-
-  <div class="photo-card" data-category="people">
-    <img src="photos/people-1.jpg" alt="Portrait 1">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div>
-
-  <div class="photo-card" data-category="people">
-    <img src="photos/people-2.jpg" alt="Portrait 2">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div>
-
-  <div class="photo-card" data-category="people">
-    <img src="photos/people-3.jpg" alt="Portrait 3">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="section-label"><h2>Cities</h2></div>
-
-<div class="gallery">
-
-  <div class="photo-card" data-category="cities">
-    <img src="photos/city-1.jpg" alt="City night">
-    <div class="overlay">
-      <p class="caption">Your city caption here</p>
-    </div>
-  </div>
-
-  <div class="photo-card" data-category="cities">
-    <img src="photos/city-2.jpg" alt="City 2">
-    <div class="overlay">
-      <p class="caption">Your city caption here</p>
-    </div>
-  </div>
-
-  <div class="photo-card" data-category="cities">
-    <img src="photos/city-3.jpg" alt="City 3">
-    <div class="overlay">
-      <p class="caption">Your city caption here</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="section-label"><h2>Black &amp; white</h2></div>
+<div class="section-label"><h2>My photos</h2></div>
 
 <div class="gallery" style="padding-bottom: 4rem">
 
-  <div class="photo-card" data-category="bw">
-    <img src="photos/bw-1.jpg" alt="Black and white 1">
+  <!-- ✅ Photo 1 — uploaded -->
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/IMG_0838.jpg" alt="My photo">
     <div class="overlay">
       <p class="caption">Your caption here</p>
     </div>
   </div>
 
-  <div class="photo-card" data-category="bw">
-    <img src="photos/bw-2.jpg" alt="Black and white 2">
+  <!-- ✅ ADD YOUR NEXT PHOTO — copy this block and change the filename:
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/IMG_XXXX.jpg" alt="Description">
     <div class="overlay">
       <p class="caption">Your caption here</p>
     </div>
   </div>
 
-  <div class="photo-card" data-category="bw">
-    <img src="photos/bw-3.jpg" alt="Black and white 3">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div>
+  -->
 
 </div>
 
@@ -484,7 +119,6 @@
   <span>&copy; 2025</span>
 </footer>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lb-close">&#x2715;</button>
   <button class="lightbox-nav" id="lb-prev">&#8592;</button>
@@ -494,7 +128,6 @@
 </div>
 
 <script>
-  // ── Filter buttons ──
   const filterBtns = document.querySelectorAll('.filter-btn');
   const allCards   = document.querySelectorAll('.photo-card');
 
@@ -504,14 +137,11 @@
       btn.classList.add('active');
       const f = btn.dataset.filter;
       allCards.forEach(card => {
-        card.classList.toggle('hidden',
-          f !== 'all' && card.dataset.category !== f
-        );
+        card.classList.toggle('hidden', f !== 'all' && card.dataset.category !== f);
       });
     });
   });
 
-  // ── Lightbox ──
   let currentIndex = 0;
   const visibleCards = () => [...allCards].filter(c => !c.classList.contains('hidden'));
 
@@ -520,10 +150,9 @@
     if (!cards[index]) return;
     currentIndex = index;
     const card = cards[index];
-    document.getElementById('lb-img').src     = card.querySelector('img').src;
-    document.getElementById('lb-img').alt     = card.querySelector('img').alt;
-    document.getElementById('lb-caption').textContent =
-      card.querySelector('.caption')?.textContent || '';
+    document.getElementById('lb-img').src = card.querySelector('img').src;
+    document.getElementById('lb-img').alt = card.querySelector('img').alt;
+    document.getElementById('lb-caption').textContent = card.querySelector('.caption')?.textContent || '';
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -533,36 +162,28 @@
     document.body.style.overflow = '';
   }
 
-  allCards.forEach((card, i) => {
-    card.addEventListener('click', () => {
-      const visible = visibleCards();
-      const vi = visible.indexOf(card);
-      openLightbox(vi);
-    });
+  allCards.forEach(card => {
+    card.addEventListener('click', () => openLightbox(visibleCards().indexOf(card)));
   });
 
   document.getElementById('lb-close').addEventListener('click', closeLightbox);
   document.getElementById('lightbox').addEventListener('click', e => {
     if (e.target === document.getElementById('lightbox')) closeLightbox();
   });
-
   document.getElementById('lb-prev').addEventListener('click', e => {
     e.stopPropagation();
-    const cards = visibleCards();
-    openLightbox((currentIndex - 1 + cards.length) % cards.length);
+    const c = visibleCards();
+    openLightbox((currentIndex - 1 + c.length) % c.length);
   });
-
   document.getElementById('lb-next').addEventListener('click', e => {
     e.stopPropagation();
-    const cards = visibleCards();
-    openLightbox((currentIndex + 1) % cards.length);
+    openLightbox((currentIndex + 1) % visibleCards().length);
   });
-
   document.addEventListener('keydown', e => {
     if (!document.getElementById('lightbox').classList.contains('open')) return;
-    if (e.key === 'Escape')       closeLightbox();
-    if (e.key === 'ArrowLeft')    { const c = visibleCards(); openLightbox((currentIndex - 1 + c.length) % c.length); }
-    if (e.key === 'ArrowRight')   { const c = visibleCards(); openLightbox((currentIndex + 1) % c.length); }
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft')  { const c = visibleCards(); openLightbox((currentIndex - 1 + c.length) % c.length); }
+    if (e.key === 'ArrowRight') { openLightbox((currentIndex + 1) % visibleCards().length); }
   });
 </script>
 
