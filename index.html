@@ -18,7 +18,20 @@
     }
     body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; transition: background 0.3s, color 0.3s; }
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--cream); z-index: 10; transition: background 0.3s; }
+    body {
+  position: relative;
+}
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('Photos/30.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;        /* ← change this: 0 = invisible, 1 = fully visible */
+  z-index: -1;
+}
     /* Dark mode toggle button */
     .theme-toggle { background: none; border: 0.5px solid var(--border); border-radius: 40px; cursor: pointer; padding: 6px 14px; font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
     .theme-toggle:hover { border-color: var(--accent); color: var(--ink); }
