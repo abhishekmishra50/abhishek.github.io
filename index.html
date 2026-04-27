@@ -9,21 +9,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── LIGHT MODE (default) ── */
     :root {
-      --bg:      #f4f1ec;
-      --nav-bg:  #f4f1ecee;
-      --ink:     #111318;
-      --muted:   #7a808c;
-      --accent:  #00aecf;
-      --border:  #d5d0c8;
-      --btn-bg:  #e8e3db;
-      --btn-txt: #3a4050;
-      --cyan:    #00aecf;
-    }
-
-    /* ── DARK MODE ── */
-    body.dark {
       --bg:      #0d0f12;
       --nav-bg:  #0d0f12ee;
       --ink:     #dde4ed;
@@ -92,22 +78,7 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
 
-    .theme-toggle {
-      background: var(--btn-bg);
-      border: 1px solid var(--border);
-      border-radius: 40px;
-      cursor: pointer;
-      padding: 7px 16px;
-      font-size: 13px;
-      color: var(--btn-txt);
-      font-family: 'DM Sans', sans-serif;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .theme-toggle:hover { border-color: var(--cyan); color: var(--cyan); }
-    .theme-toggle .icon { font-size: 14px; }
+    .theme-toggle { display: none; }
 
     /* ── HERO ── */
     .hero {
@@ -552,28 +523,7 @@
     setTimeout(typeLetter, 400); // small initial delay
   })();
 
-  // ── Dark mode toggle ──
-  const toggleBtn  = document.getElementById('theme-toggle');
-  const themeIcon  = document.getElementById('theme-icon');
-  const themeLabel = document.getElementById('theme-label');
-
-  // Default is LIGHT — only go dark if user previously chose dark
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-    themeIcon.textContent  = '☀️';
-    themeLabel.textContent = 'Light';
-  } else {
-    document.body.classList.remove('dark');
-    themeIcon.textContent  = '🌙';
-    themeLabel.textContent = 'Dark';
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
-    themeIcon.textContent  = isDark ? '☀️' : '🌙';
-    themeLabel.textContent = isDark ? 'Light' : 'Dark';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
+  // dark-only — no toggle needed
 
   // ── Filter buttons ──
   const filterBtns = document.querySelectorAll('.filter-btn');
