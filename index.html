@@ -12,8 +12,17 @@
       --cream: #faf8f4; --ink: #1a1714; --muted: #7a7570;
       --accent: #c4a882; --border: #e8e3db; --hover: #f0ece5;
     }
-    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--cream); z-index: 10; }
+    body.dark {
+      --cream: #141210; --ink: #f0ece5; --muted: #8a8580;
+      --accent: #c4a882; --border: #2a2724; --hover: #1e1c19;
+    }
+    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--cream); z-index: 10; transition: background 0.3s; }
+
+    /* Dark mode toggle button */
+    .theme-toggle { background: none; border: 0.5px solid var(--border); border-radius: 40px; cursor: pointer; padding: 6px 14px; font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--ink); }
+    .theme-toggle .icon { font-size: 14px; }
     .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; letter-spacing: 0.03em; text-decoration: none; color: var(--ink); }
     .nav-links { display: flex; gap: 2rem; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
@@ -22,7 +31,7 @@
     .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.1; margin-bottom: 1rem; }
     .hero p { color: var(--muted); font-size: 14px; font-weight: 300; letter-spacing: 0.05em; }
     .filters { display: flex; gap: 0.6rem; padding: 0 3rem 2.5rem; flex-wrap: wrap; }
-    .filter-btn { padding: 7px 20px; border: 0.5px solid var(--border); background: transparent; border-radius: 40px; cursor: pointer; font-size: 12px; letter-spacing: 0.05em; color: var(--muted); font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+    .filter-btn { padding: 7px 20px; border: 0.5px solid var(--border); background: var(--cream); border-radius: 40px; cursor: pointer; font-size: 12px; letter-spacing: 0.05em; color: var(--muted); font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
     .filter-btn:hover { border-color: var(--accent); color: var(--ink); }
     .filter-btn.active { background: var(--ink); border-color: var(--ink); color: var(--cream); }
     .section-label { padding: 0 3rem 1.25rem; display: flex; align-items: center; gap: 1.25rem; }
@@ -59,10 +68,16 @@
 
 <nav>
   <a class="nav-name" href="#">Abhishek</a>
-  <div class="nav-links">
-    <a href="#" class="active">Photos</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+  <div style="display:flex; align-items:center; gap:1.5rem;">
+    <div class="nav-links">
+      <a href="#" class="active">Photos</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+      <span class="icon" id="theme-icon">🌙</span>
+      <span id="theme-label">Dark</span>
+    </button>
   </div>
 </nav>
 
@@ -257,6 +272,25 @@
 </div>
 
 <script>
+  // Dark mode toggle
+  const toggleBtn   = document.getElementById('theme-toggle');
+  const themeIcon   = document.getElementById('theme-icon');
+  const themeLabel  = document.getElementById('theme-label');
+
+  // Remember preference
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    themeIcon.textContent  = '☀️';
+    themeLabel.textContent = 'Light';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    themeIcon.textContent  = isDark ? '☀️' : '🌙';
+    themeLabel.textContent = isDark ? 'Light' : 'Dark';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
   const filterBtns = document.querySelectorAll('.filter-btn');
   const allCards   = document.querySelectorAll('.photo-card');
 
