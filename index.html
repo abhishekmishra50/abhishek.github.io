@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhishek  — Photography</title>
+  <title>Abhishek — Photography</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -58,7 +58,7 @@
 <body>
 
 <nav>
-  <a class="nav-name" href="#">Abhishek </a>
+  <a class="nav-name" href="#">Abhishek</a>
   <div class="nav-links">
     <a href="#" class="active">Photos</a>
     <a href="#">About</a>
@@ -68,25 +68,32 @@
 
 <div class="hero">
   <h1>A life in<br><em>photographs</em></h1>
-  
 </div>
 
+<!-- ══════════════════════════════════════════════
+     FILTER BUTTONS — data-filter values:
+       all      → Show everything
+       nature   → Nature photos
+       cities   → Cityscape photos
+       bw       → Black & White photos
+       random   → Random & Edited photos
+     ══════════════════════════════════════════════ -->
 <div class="filters">
-  
+  <button class="filter-btn" data-filter="all">All</button>
   <button class="filter-btn" data-filter="nature">Nature</button>
   <button class="filter-btn" data-filter="people">People</button>
   <button class="filter-btn" data-filter="cities">Cityscape</button>
   <button class="filter-btn" data-filter="bw">Black &amp; White</button>
-  <button class="filter-btn" data-filter="cities">Random & Edited</button>
+  <button class="filter-btn" data-filter="random">Random &amp; Edited</button>
 </div>
 
 <!-- ══════════════════════════════════════════════
      HOW TO ADD MORE PHOTOS:
      1. Upload your .jpg file into the "Photos" folder on GitHub
-        (capital P — exactly "Photos")
      2. Copy one photo-card block below
-     3. Change:  src="Photos/YOUR-FILENAME.jpg"
-     4. Change:  data-category="nature" (or people / cities / bw)
+     3. Change: src="Photos/YOUR-FILENAME.jpg"
+     4. Change: data-category to one of:
+          nature / people / cities / bw / random
      5. Update the caption text
      ══════════════════════════════════════════════ -->
 
@@ -94,180 +101,150 @@
 
 <div class="gallery" style="padding-bottom: 4rem">
 
-  <!-- ✅ Photo 1 — uploaded -->
-  <div class="photo-card" data-category="Black &amp; White">
+  <div class="photo-card" data-category="bw">
     <img src="Photos/1.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
+    <div class="overlay"><p class="caption">Your caption here</p></div>
   </div>
-  <div class="photo-card" data-category="Cityscape">
+
+  <div class="photo-card" data-category="cities">
     <img src="Photos/2.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Cityscape">
-    <img src="Photos/3.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/4.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/5.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/6.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/7.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/8.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Random & Edited">
-    <img src="Photos/9.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/10.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/11.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Black &amp; White">
-    <img src="Photos/12.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/13.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/14.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/15.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/16.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Cityscape">
-    <img src="Photos/17.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Cityscape">
-    <img src="Photos/18.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Random & Edited">
-    <img src="Photos/19.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Random & Edited">
-    <img src="Photos/20.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Cityscape">
-    <img src="Photos/21.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Cityscape">
-    <img src="Photos/22.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Cityscape">
-    <img src="Photos/23.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/24.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
+    <div class="overlay"><p class="caption">Your caption here</p></div>
   </div>
-    </div><div class="photo-card" data-category="Random & Edited ">
+
+  <div class="photo-card" data-category="cities">
+    <img src="Photos/3.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/4.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/5.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/6.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/7.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/8.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="random">
+    <img src="Photos/9.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/10.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/11.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="bw">
+    <img src="Photos/12.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/13.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/14.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/15.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/16.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="cities">
+    <img src="Photos/17.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="cities">
+    <img src="Photos/18.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="random">
+    <img src="Photos/19.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="random">
+    <img src="Photos/20.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="cities">
+    <img src="Photos/21.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="cities">
+    <img src="Photos/22.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="cities">
+    <img src="Photos/23.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
+    <img src="Photos/24.jpg" alt="My photo">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="random">
     <img src="Photos/25.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
     <img src="Photos/26.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="Cityscape">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="cities">
     <img src="Photos/27.jpg" alt="My photo">
-    <div class="overlay">s
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
+
+  <div class="photo-card" data-category="nature">
     <img src="Photos/28.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  <!-- </div><div class="photo-card" data-category="nature">
-    <img src="Photos/1.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/1.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/1.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div><div class="photo-card" data-category="nature">
-    <img src="Photos/1.jpg" alt="My photo">
-    <div class="overlay">
-      <p class="caption">Your caption here</p>
-    </div>
-  </div> -->
-
-  
- 
- 
-
-  -->
+    <div class="overlay"><p class="caption">Your caption here</p></div>
+  </div>
 
 </div>
 
 <footer>
-  <span>Abhishek  &middot; Photography</span>
+  <span>Abhishek &middot; Photography</span>
   <span>&copy; 2025</span>
 </footer>
 
