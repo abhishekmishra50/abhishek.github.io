@@ -9,27 +9,34 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── LIGHT MODE (default) ── */
     :root {
-      --cream: #0d0f12;
-      --ink: #e2eaf2;
-      --muted: #4a5568;
-      --accent: #00d4ff;
-      --border: #1c2333;
-      --hover: #131820;
-      --terminal-green: #00d4ff;
+      --bg:      #f4f1ec;
+      --nav-bg:  #f4f1ecee;
+      --ink:     #111318;
+      --muted:   #7a808c;
+      --accent:  #00aecf;
+      --border:  #d5d0c8;
+      --btn-bg:  #e8e3db;
+      --btn-txt: #3a4050;
+      --cyan:    #00aecf;
     }
 
+    /* ── DARK MODE ── */
     body.dark {
-      --cream: #0d0f12;
-      --ink: #e2eaf2;
-      --muted: #4a5568;
-      --accent: #00d4ff;
-      --border: #1c2333;
-      --hover: #131820;
+      --bg:      #0d0f12;
+      --nav-bg:  #0d0f12ee;
+      --ink:     #dde4ed;
+      --muted:   #4e5768;
+      --accent:  #00d4ff;
+      --border:  #1c2535;
+      --btn-bg:  #141a24;
+      --btn-txt: #8ba0b8;
+      --cyan:    #00d4ff;
     }
 
     body {
-      background: var(--cream);
+      background: var(--bg);
       color: var(--ink);
       font-family: 'DM Sans', sans-serif;
       font-size: 15px;
@@ -45,7 +52,7 @@
       background-image: url('Photos/30.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.30;
+      opacity: 0.18;
       z-index: -1;
     }
 
@@ -55,10 +62,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 3rem;
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      background: var(--cream);
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 10;
       transition: background 0.3s;
     }
@@ -81,23 +90,23 @@
       text-transform: uppercase;
       transition: color 0.2s;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
 
     .theme-toggle {
-      background: none;
-      border: 0.5px solid var(--border);
+      background: var(--btn-bg);
+      border: 1px solid var(--border);
       border-radius: 40px;
       cursor: pointer;
-      padding: 6px 14px;
+      padding: 7px 16px;
       font-size: 13px;
-      color: var(--muted);
+      color: var(--btn-txt);
       font-family: 'DM Sans', sans-serif;
       transition: all 0.2s;
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle:hover { border-color: var(--cyan); color: var(--cyan); }
     .theme-toggle .icon { font-size: 14px; }
 
     /* ── HERO ── */
@@ -112,8 +121,8 @@
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: 1rem;
-      color: var(--terminal-green);
-      text-shadow: 0 0 18px rgba(0, 212, 255, 0.7), 0 0 50px rgba(0, 212, 255, 0.25);
+      color: var(--cyan);
+      text-shadow: 0 0 18px rgba(0, 180, 220, 0.5), 0 0 50px rgba(0, 180, 220, 0.15);
       white-space: nowrap;
       overflow: visible;
       min-height: 1.3em;
@@ -137,11 +146,11 @@
       display: inline-block;
       width: 2px;
       height: 0.85em;
-      background: var(--terminal-green);
+      background: var(--cyan);
       vertical-align: middle;
       animation: blink 0.6s step-end infinite;
       margin-left: 1px;
-      box-shadow: 0 0 10px rgba(0, 212, 255, 0.95);
+      box-shadow: 0 0 10px var(--cyan);
     }
 
     @keyframes blink { 50% { opacity: 0; } }
@@ -155,24 +164,31 @@
     }
 
     .filter-btn {
-      padding: 10px 26px;
-      border: 0.5px solid var(--border);
-      background: var(--cream);
+      padding: 10px 24px;
+      border: 1.5px solid var(--border);
+      background: var(--btn-bg);
       border-radius: 40px;
       cursor: pointer;
       font-size: 13px;
-      letter-spacing: 0.06em;
-      color: var(--muted);
+      letter-spacing: 0.05em;
+      color: var(--btn-txt);
       font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
       transition: all 0.2s;
     }
-    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #0d0f12;
-      box-shadow: 0 0 16px rgba(0, 212, 255, 0.4);
+    .filter-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: var(--btn-bg);
     }
+    .filter-btn.active {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 0 18px rgba(0, 180, 220, 0.35);
+    }
+    body.dark .filter-btn.active { color: #0a0d10; }
 
     /* ── SECTION LABEL ── */
     .section-label {
@@ -189,7 +205,7 @@
       color: var(--muted);
       white-space: nowrap;
     }
-    .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     /* ── GALLERY ── */
     .gallery { columns: 3; gap: 8px; padding: 0 3rem 2rem; }
@@ -541,10 +557,15 @@
   const themeIcon  = document.getElementById('theme-icon');
   const themeLabel = document.getElementById('theme-label');
 
+  // Default is LIGHT — only go dark if user previously chose dark
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
     themeIcon.textContent  = '☀️';
     themeLabel.textContent = 'Light';
+  } else {
+    document.body.classList.remove('dark');
+    themeIcon.textContent  = '🌙';
+    themeLabel.textContent = 'Dark';
   }
 
   toggleBtn.addEventListener('click', () => {
